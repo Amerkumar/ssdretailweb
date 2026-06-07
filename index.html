@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SSD Mart | Coming Soon to Victoria, BC</title>
-    <meta name="description" content="SSD Mart - Your new neighborhood convenience store coming soon to Victoria, BC. Quality products, friendly service, local convenience.">
+    <meta name="description" content="SSD Mart - Victoria's hybrid convenience store with extended hours, authentic South Asian specialty foods, and a self-serve innovation counter open 24/7. Coming soon to Victoria, BC.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -24,6 +24,8 @@
             --cream: #f1faee;
             --white: #ffffff;
             --dark-gray: #2b2d42;
+            --saffron: #FF9933;
+            --teal: #2a9d8f;
         }
 
         body {
@@ -36,12 +38,41 @@
 
         /* Header Strip */
         .top-strip {
-            background: var(--primary-red);
+            background: var(--dark);
             color: white;
             text-align: center;
-            padding: 0.5rem;
-            font-size: 0.85rem;
+            padding: 0.6rem 1rem;
+            font-size: 0.82rem;
             font-weight: 500;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .top-strip-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .top-strip-item .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--yellow);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .top-strip .badge-24 {
+            background: var(--teal);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
             letter-spacing: 0.05em;
         }
 
@@ -55,7 +86,6 @@
             overflow: hidden;
         }
 
-        /* Decorative Store Elements */
         .store-decor {
             position: absolute;
             top: 0;
@@ -89,7 +119,6 @@
             50% { transform: translateY(-20px) rotate(10deg); }
         }
 
-        /* Hero Content */
         .hero-content {
             flex: 1;
             display: flex;
@@ -102,7 +131,6 @@
             text-align: center;
         }
 
-        /* Logo */
         .logo-wrapper {
             margin-bottom: 2rem;
             animation: slideDown 0.8s ease-out;
@@ -131,7 +159,6 @@
             margin-top: 0.5rem;
         }
 
-        /* Coming Soon Badge */
         .coming-soon-badge {
             display: inline-flex;
             align-items: center;
@@ -145,7 +172,7 @@
             font-size: 1.2rem;
             margin: 2rem 0;
             box-shadow: 0 10px 40px rgba(252, 191, 73, 0.4);
-            animation: slideUp 0.8s ease-out 0.2s both, bounce 2s ease-in-out infinite;
+            animation: slideUp 0.8s ease-out 0.2s both, bounce 2s ease-in-out 1s infinite;
         }
 
         .coming-soon-badge::before {
@@ -158,24 +185,22 @@
             50% { transform: translateY(-5px); }
         }
 
-        /* Main Heading */
         .main-heading {
             font-family: 'Poppins', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--white);
-            line-height: 1.3;
+            line-height: 1.4;
             margin-bottom: 1.5rem;
             animation: slideUp 0.8s ease-out 0.4s both;
         }
 
-        .main-heading .highlight {
-            color: var(--yellow);
-        }
+        .main-heading .highlight { color: var(--yellow); }
+        .main-heading .highlight-saffron { color: var(--saffron); }
+        .main-heading .highlight-teal { color: #4ecdc4; }
 
-        /* Description */
         .description {
-            max-width: 550px;
+            max-width: 580px;
             font-size: 1.1rem;
             line-height: 1.8;
             color: rgba(255, 255, 255, 0.85);
@@ -183,7 +208,6 @@
             animation: slideUp 0.8s ease-out 0.6s both;
         }
 
-        /* Location Badge */
         .location {
             display: inline-flex;
             align-items: center;
@@ -203,18 +227,18 @@
             fill: var(--primary-red);
         }
 
-        /* Product Categories */
-        .categories {
+        /* Tier Pillars */
+        .tier-pillars {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
-            max-width: 700px;
+            max-width: 740px;
             width: 100%;
             margin-top: 1rem;
             animation: slideUp 0.8s ease-out 1s both;
         }
 
-        .category {
+        .tier-pillar {
             background: rgba(255,255,255,0.08);
             border: 2px solid rgba(255,255,255,0.1);
             border-radius: 16px;
@@ -222,34 +246,164 @@
             text-align: center;
             transition: all 0.3s ease;
             cursor: default;
+            position: relative;
         }
 
-        .category:hover {
-            background: rgba(255,255,255,0.15);
-            border-color: var(--yellow);
-            transform: translateY(-5px);
+        .tier-pillar:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); }
+        .tier-pillar.core:hover { border-color: var(--light-blue); }
+        .tier-pillar.specialty:hover { border-color: var(--saffron); }
+        .tier-pillar.innovation:hover { border-color: #4ecdc4; }
+
+        .badge-always-open {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--teal);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 0.7rem;
+            border-radius: 50px;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
         }
 
-        .category-icon {
+        .tier-icon {
             font-size: 2.5rem;
             margin-bottom: 0.75rem;
         }
 
-        .category-name {
+        .tier-label {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .tier-pillar.core .tier-label { color: var(--light-blue); }
+        .tier-pillar.specialty .tier-label { color: var(--saffron); }
+        .tier-pillar.innovation .tier-label { color: #4ecdc4; }
+
+        .tier-name {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--white);
         }
 
-        /* Store Features Section */
-        .features-section {
-            background: var(--white);
+        /* Hours Section */
+        .hours-section {
+            background: var(--dark);
             padding: 4rem 2rem;
         }
 
-        .features-container {
-            max-width: 1000px;
+        .hours-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hours-section .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .hours-section .section-title span { color: var(--yellow); }
+
+        .hours-section .section-subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 520px;
+            margin: 0 auto 3rem;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .hours-card {
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .hours-card.main-store {
+            background: rgba(255,255,255,0.06);
+            border: 2px solid rgba(255,255,255,0.12);
+        }
+
+        .hours-card.innovation-counter {
+            background: rgba(42, 157, 143, 0.15);
+            border: 2px solid var(--teal);
+        }
+
+        .hours-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hours-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.4rem;
+        }
+
+        .hours-card .hours-sub {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        .hours-display {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .hours-card.main-store .hours-display { color: var(--yellow); }
+        .hours-card.innovation-counter .hours-display { color: #4ecdc4; }
+
+        .hours-note {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.5;
+        }
+
+        .hours-card.innovation-counter .hours-note { color: rgba(255,255,255,0.7); }
+
+        .open-24-badge {
+            display: inline-block;
+            background: var(--teal);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            letter-spacing: 0.08em;
+            margin-top: 1rem;
+        }
+
+        /* Three-Tier Section */
+        .tiers-section {
+            background: var(--cream);
+            padding: 5rem 2rem;
+        }
+
+        .tiers-container {
+            max-width: 1050px;
             margin: 0 auto;
         }
 
@@ -259,11 +413,127 @@
             font-weight: 700;
             text-align: center;
             color: var(--dark);
-            margin-bottom: 3rem;
+            margin-bottom: 0.75rem;
         }
 
-        .section-title span {
-            color: var(--primary-red);
+        .section-title span { color: var(--primary-red); }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 2rem;
+        }
+
+        .tier-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+        }
+
+        .tier-card-header {
+            padding: 2rem 2rem 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .tier-card-header.core { background: linear-gradient(135deg, #1d3557, #457b9d); }
+        .tier-card-header.specialty { background: linear-gradient(135deg, #c1440e, #FF9933); }
+        .tier-card-header.innovation { background: linear-gradient(135deg, #1b4332, #2a9d8f); }
+
+        .tier-24-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: white;
+            color: var(--teal);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            letter-spacing: 0.05em;
+        }
+
+        .tier-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(255,255,255,0.2);
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .tier-header-text h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.25rem;
+        }
+
+        .tier-header-text p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.75);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .tier-card-body {
+            padding: 1.75rem 2rem 2rem;
+        }
+
+        .tier-card-body p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .tier-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+        }
+
+        .tag.core { background: #e8f4f8; color: #1d3557; }
+        .tag.specialty { background: #fff3e0; color: #c1440e; }
+        .tag.innovation { background: #e0f2f0; color: #1b4332; }
+
+        /* Features Section */
+        .features-section {
+            background: var(--white);
+            padding: 5rem 2rem;
+        }
+
+        .features-container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .features-grid {
@@ -284,7 +554,7 @@
         .feature-card:hover {
             border-color: var(--primary-orange);
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
 
         .feature-icon {
@@ -315,7 +585,7 @@
 
         /* Footer */
         .footer {
-            background: var(--dark);
+            background: var(--dark-gray);
             color: var(--white);
             padding: 3rem 2rem;
             text-align: center;
@@ -325,7 +595,15 @@
             font-family: 'Poppins', sans-serif;
             font-size: 2rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
         }
 
         .footer-location {
@@ -349,12 +627,10 @@
             transition: color 0.3s ease;
         }
 
-        .footer-contact a:hover {
-            color: var(--white);
-        }
+        .footer-contact a:hover { color: var(--white); }
 
         .footer-copyright {
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.4);
             font-size: 0.85rem;
             margin-top: 2rem;
             padding-top: 2rem;
@@ -363,111 +639,87 @@
 
         /* Animations */
         @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .logo {
-                font-size: 3rem;
-            }
-
-            .main-heading {
-                font-size: 1.8rem;
-            }
-
-            .coming-soon-badge {
-                font-size: 1rem;
-                padding: 0.8rem 1.5rem;
-            }
-
-            .categories {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
+            .top-strip { gap: 0.75rem; font-size: 0.75rem; }
+            .logo { font-size: 3rem; }
+            .main-heading { font-size: 1.8rem; }
+            .coming-soon-badge { font-size: 1rem; padding: 0.8rem 1.5rem; }
+            .tier-pillars { grid-template-columns: 1fr; max-width: 300px; }
+            .hours-grid { grid-template-columns: 1fr; }
+            .tiers-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.5rem; }
         }
 
         @media (max-width: 480px) {
-            .logo {
-                font-size: 2.5rem;
-            }
-
-            .category {
-                padding: 1rem;
-            }
-
-            .category-icon {
-                font-size: 2rem;
-            }
+            .logo { font-size: 2.5rem; }
+            .tier-pillar { padding: 1rem; }
+            .tier-icon { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
+
     <!-- Top Strip -->
     <div class="top-strip">
-        SSD Mart - Your New Neighbourhood Convenience Store - Opening Soon in Victoria, BC!
+        <div class="top-strip-item">
+            <div class="dot"></div>
+            <span>Coming Soon to Victoria, BC</span>
+        </div>
+        <div class="top-strip-item">
+            <div class="dot"></div>
+            <span>Extended Store Hours</span>
+        </div>
+        <div class="top-strip-item">
+            <span class="badge-24">24/7</span>
+            <span>Self-Serve Innovation Counter</span>
+        </div>
     </div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <!-- Decorative Elements -->
         <div class="store-decor">
             <div class="shelf shelf-1"></div>
             <div class="shelf shelf-2"></div>
             <div class="shelf shelf-3"></div>
             <div class="shelf shelf-4"></div>
-            <div class="floating-product" style="top: 15%; left: 10%; animation-delay: 0s;">🥤</div>
-            <div class="floating-product" style="top: 25%; right: 15%; animation-delay: 3s;">🍎</div>
-            <div class="floating-product" style="top: 60%; left: 8%; animation-delay: 6s;">🍞</div>
-            <div class="floating-product" style="top: 70%; right: 12%; animation-delay: 9s;">🧃</div>
-            <div class="floating-product" style="top: 40%; left: 5%; animation-delay: 12s;">🍫</div>
-            <div class="floating-product" style="bottom: 20%; right: 8%; animation-delay: 15s;">☕</div>
+            <div class="floating-product" style="top: 15%; left: 10%; animation-delay: 0s;">🍵</div>
+            <div class="floating-product" style="top: 25%; right: 15%; animation-delay: 3s;">🧇</div>
+            <div class="floating-product" style="top: 60%; left: 8%; animation-delay: 6s;">🍡</div>
+            <div class="floating-product" style="top: 70%; right: 12%; animation-delay: 9s;">🧋</div>
+            <div class="floating-product" style="top: 40%; left: 5%; animation-delay: 12s;">🍦</div>
+            <div class="floating-product" style="bottom: 20%; right: 8%; animation-delay: 15s;">🥤</div>
         </div>
 
         <div class="hero-content">
             <div class="logo-wrapper">
                 <div class="logo">SSD Mart</div>
-                <div class="logo-sub">Convenience Store</div>
+                <div class="logo-sub">Hybrid Convenience Store</div>
             </div>
 
             <div class="coming-soon-badge">
-                Coming Soon
+                Coming Soon to Victoria
             </div>
 
             <h1 class="main-heading">
-                Your One-Stop Shop for<br>
-                <span class="highlight">Everyday Essentials</span>
+                Everyday Essentials. <span class="highlight-saffron">Authentic Flavours.</span><br>
+                <span class="highlight-teal">Always Open.</span>
             </h1>
 
             <p class="description">
-                From fresh snacks and cold beverages to daily necessities -
-                we're bringing convenience right to your neighbourhood.
-                Quality products, friendly service, great prices.
+                Victoria's first hybrid convenience store — extended hours for your daily needs,
+                authentic South Asian specialty foods, and a self-serve innovation counter
+                that never closes.
             </p>
 
             <div class="location">
@@ -475,50 +727,154 @@
                 <span>Victoria, British Columbia</span>
             </div>
 
-            <div class="categories">
-                <div class="category">
-                    <div class="category-icon">🥤</div>
-                    <div class="category-name">Beverages</div>
+            <div class="tier-pillars">
+                <div class="tier-pillar core">
+                    <div class="tier-icon">🛒</div>
+                    <div class="tier-label">Tier 1</div>
+                    <div class="tier-name">Core Convenience</div>
                 </div>
-                <div class="category">
-                    <div class="category-icon">🍿</div>
-                    <div class="category-name">Snacks</div>
+                <div class="tier-pillar specialty">
+                    <div class="tier-icon">🍵</div>
+                    <div class="tier-label">Tier 2</div>
+                    <div class="tier-name">Specialty Hub</div>
                 </div>
-                <div class="category">
-                    <div class="category-icon">🧴</div>
-                    <div class="category-name">Personal Care</div>
-                </div>
-                <div class="category">
-                    <div class="category-icon">🏠</div>
-                    <div class="category-name">Household</div>
-                </div>
-                <div class="category">
-                    <div class="category-icon">🍞</div>
-                    <div class="category-name">Groceries</div>
+                <div class="tier-pillar innovation">
+                    <div class="badge-always-open">Open 24/7</div>
+                    <div class="tier-icon">🤖</div>
+                    <div class="tier-label">Tier 3</div>
+                    <div class="tier-name">Innovation Counter</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Hours Section -->
+    <section class="hours-section">
+        <div class="hours-container">
+            <h2 class="section-title">Two Ways to <span>Shop With Us</span></h2>
+            <p class="section-subtitle">
+                The main store runs on extended hours so we're there when you need us most.
+                The Innovation Counter never closes — because cravings don't keep a schedule.
+            </p>
+            <div class="hours-grid">
+                <div class="hours-card main-store">
+                    <div class="hours-card-icon">🏪</div>
+                    <h3>Main Store</h3>
+                    <p class="hours-sub">Core Convenience + Specialty Hub</p>
+                    <div class="hours-display">Extended Hours</div>
+                    <p class="hours-note">Open early for morning commuters.<br>Open late for everyone else.</p>
+                </div>
+                <div class="hours-card innovation-counter">
+                    <div class="hours-card-icon">🤖</div>
+                    <h3>Innovation Counter</h3>
+                    <p class="hours-sub">Self-Serve Machines</p>
+                    <div class="hours-display">24 / 7</div>
+                    <p class="hours-note">Always accessible. No staff needed.<br>Taiyaki, boba, soft serve and more — any hour.</p>
+                    <div class="open-24-badge">Always Open</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three-Tier Strategy Section -->
+    <section class="tiers-section">
+        <div class="tiers-container">
+            <h2 class="section-title">Our <span>Three-Tier</span> Strategy</h2>
+            <p class="section-subtitle">
+                Three distinct experiences under one roof — each designed to serve a different need,
+                together creating something Victoria has never seen before.
+            </p>
+            <div class="tiers-grid">
+                <div class="tier-card">
+                    <div class="tier-card-header core">
+                        <div class="tier-number">01</div>
+                        <div class="tier-header-text">
+                            <h3>Core Convenience</h3>
+                            <p>Extended Hours</p>
+                        </div>
+                    </div>
+                    <div class="tier-card-body">
+                        <p>Your daily essentials — always stocked, always accessible. Open early for morning commuters and late for night owls.</p>
+                        <div class="tier-tags">
+                            <span class="tag core">Snacks & Beverages</span>
+                            <span class="tag core">Toiletries</span>
+                            <span class="tag core">Groceries</span>
+                            <span class="tag core">Lottery Tickets</span>
+                            <span class="tag core">Extended Hours</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tier-card">
+                    <div class="tier-card-header specialty">
+                        <div class="tier-number">02</div>
+                        <div class="tier-header-text">
+                            <h3>Specialty Hub</h3>
+                            <p>Culture & Flavour</p>
+                        </div>
+                    </div>
+                    <div class="tier-card-body">
+                        <p>Authentic South Asian prepared foods, a fresh chai station, imported packaged goods, and rotating seasonal sections celebrating cultural moments year-round.</p>
+                        <div class="tier-tags">
+                            <span class="tag specialty">Fresh Chai Station</span>
+                            <span class="tag specialty">Samosas & Chaat</span>
+                            <span class="tag specialty">Gol Gappa</span>
+                            <span class="tag specialty">Imported Brands</span>
+                            <span class="tag specialty">Diwali Sweets</span>
+                            <span class="tag specialty">Mooncakes</span>
+                            <span class="tag specialty">Seasonal Sections</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tier-card">
+                    <div class="tier-24-badge">OPEN 24/7</div>
+                    <div class="tier-card-header innovation">
+                        <div class="tier-number">03</div>
+                        <div class="tier-header-text">
+                            <h3>Innovation Counter</h3>
+                            <p>Self-Serve · Always Open</p>
+                        </div>
+                    </div>
+                    <div class="tier-card-body">
+                        <p>A dedicated self-serve zone with automated machines — open around the clock, independently from the main store. A flexible concept space we evolve continuously.</p>
+                        <div class="tier-tags">
+                            <span class="tag innovation">Taiyaki</span>
+                            <span class="tag innovation">Bubble Waffle</span>
+                            <span class="tag innovation">Boba Machine</span>
+                            <span class="tag innovation">Soft Serve</span>
+                            <span class="tag innovation">Frozen Yogurt</span>
+                            <span class="tag innovation">Mochi Ice Cream</span>
+                            <span class="tag innovation">Self-Serve · 24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Victoria Needs SSD Mart -->
     <section class="features-section">
         <div class="features-container">
-            <h2 class="section-title">Why Shop <span>With Us</span>?</h2>
+            <h2 class="section-title">Why <span>Victoria</span> Needs This</h2>
+            <p class="section-subtitle" style="text-align:center; color:#666; max-width:560px; margin: 0 auto 3rem; line-height:1.6;">
+                Serving a city that is more diverse, more dynamic, and more demanding than ever before.
+            </p>
             <div class="features-grid">
                 <div class="feature-card">
+                    <div class="feature-icon">🌏</div>
+                    <h3 class="feature-title">Underserved Community</h3>
+                    <p class="feature-desc">Victoria's growing Asian and South Asian population has long lacked a local source for authentic specialty foods, imported brands, and cultural celebration items.</p>
+                </div>
+                <div class="feature-card">
                     <div class="feature-icon">🕐</div>
-                    <h3 class="feature-title">Convenient Hours</h3>
-                    <p class="feature-desc">Open early, close late. We're here when you need us most.</p>
+                    <h3 class="feature-title">Extended Store Hours</h3>
+                    <p class="feature-desc">Open early for commuters, open late for everyone else. The main store is built around your schedule — with the Innovation Counter filling every gap in between.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3 class="feature-title">Great Prices</h3>
-                    <p class="feature-desc">Quality products at prices that won't break the bank.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">😊</div>
-                    <h3 class="feature-title">Friendly Service</h3>
-                    <p class="feature-desc">A warm welcome every time you walk through our doors.</p>
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Always Evolving</h3>
+                    <p class="feature-desc">The Innovation Counter lets us introduce new products and concepts continuously — a living, rotating experience that keeps people coming back.</p>
                 </div>
             </div>
         </div>
@@ -527,6 +883,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-logo">SSD Mart</div>
+        <div class="footer-tagline">Hybrid Convenience Store</div>
         <div class="footer-location">Victoria, British Columbia</div>
         <div class="footer-contact">
             <a href="mailto:ssdtraders.nshah@gmail.com">
