@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSD Mart | Coming Soon to Victoria, BC</title>
-    <meta name="description" content="SSD Mart - Victoria's hybrid convenience store with extended hours, authentic South Asian specialty foods, and a self-serve innovation counter open 24/7. Coming soon to Victoria, BC.">
+    <title>SSD Mart | Coming Soon to Greater Victoria, BC</title>
+    <meta name="description" content="SSD Mart - Greater Victoria's hybrid convenience store blending everyday essentials, authentic South Asian specialty foods, and a self-serve innovation counter open 24/7. Coming soon.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -76,7 +76,7 @@
             letter-spacing: 0.05em;
         }
 
-        /* Main Hero Section */
+        /* Hero */
         .hero {
             background: linear-gradient(135deg, var(--dark) 0%, var(--dark-gray) 100%);
             min-height: 100vh;
@@ -88,20 +88,12 @@
 
         .store-decor {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             pointer-events: none;
             overflow: hidden;
         }
 
-        .shelf {
-            position: absolute;
-            background: rgba(255,255,255,0.03);
-            border-radius: 4px;
-        }
-
+        .shelf { position: absolute; background: rgba(255,255,255,0.03); border-radius: 4px; }
         .shelf-1 { width: 200px; height: 300px; top: 10%; left: -50px; transform: rotate(-5deg); }
         .shelf-2 { width: 150px; height: 250px; top: 20%; right: -30px; transform: rotate(8deg); }
         .shelf-3 { width: 180px; height: 280px; bottom: 15%; left: 5%; transform: rotate(3deg); }
@@ -175,10 +167,7 @@
             animation: slideUp 0.8s ease-out 0.2s both, bounce 2s ease-in-out 1s infinite;
         }
 
-        .coming-soon-badge::before {
-            content: "🏪";
-            font-size: 1.5rem;
-        }
+        .coming-soon-badge::before { content: "🏪"; font-size: 1.5rem; }
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
@@ -221,11 +210,7 @@
             animation: slideUp 0.8s ease-out 0.8s both;
         }
 
-        .location svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--primary-red);
-        }
+        .location svg { width: 20px; height: 20px; fill: var(--primary-red); }
 
         /* Tier Pillars */
         .tier-pillars {
@@ -269,10 +254,7 @@
             white-space: nowrap;
         }
 
-        .tier-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.75rem;
-        }
+        .tier-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
 
         .tier-label {
             font-family: 'Poppins', sans-serif;
@@ -346,10 +328,7 @@
             border: 2px solid var(--teal);
         }
 
-        .hours-card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+        .hours-card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
 
         .hours-card h3 {
             font-family: 'Poppins', sans-serif;
@@ -497,9 +476,7 @@
             text-transform: uppercase;
         }
 
-        .tier-card-body {
-            padding: 1.75rem 2rem 2rem;
-        }
+        .tier-card-body { padding: 1.75rem 2rem 2rem; }
 
         .tier-card-body p {
             font-size: 0.95rem;
@@ -508,11 +485,7 @@
             margin-bottom: 1.25rem;
         }
 
-        .tier-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
+        .tier-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
         .tag {
             font-size: 0.78rem;
@@ -531,14 +504,11 @@
             padding: 5rem 2rem;
         }
 
-        .features-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+        .features-container { max-width: 1000px; margin: 0 auto; }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
         }
 
@@ -571,16 +541,110 @@
 
         .feature-title {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--dark);
             margin-bottom: 0.75rem;
         }
 
         .feature-desc {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             color: #666;
             line-height: 1.6;
+        }
+
+        /* Mission & Vision */
+        .mission-section {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-gray) 100%);
+            padding: 5rem 2rem;
+        }
+
+        .mission-container { max-width: 960px; margin: 0 auto; }
+
+        .mission-section .section-title {
+            color: var(--white);
+        }
+
+        .mission-section .section-title span { color: var(--yellow); }
+
+        .mission-section .section-subtitle {
+            color: rgba(255,255,255,0.55);
+            text-align: center;
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto 3.5rem;
+            line-height: 1.6;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .mission-card {
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-card.mission-box {
+            background: rgba(255,255,255,0.06);
+            border: 2px solid rgba(255,255,255,0.12);
+        }
+
+        .mission-card.vision-box {
+            background: rgba(252, 191, 73, 0.08);
+            border: 2px solid rgba(252, 191, 73, 0.3);
+        }
+
+        .mission-card-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+        }
+
+        .mission-card.mission-box .mission-card-label {
+            background: rgba(168, 218, 220, 0.15);
+            color: var(--light-blue);
+        }
+
+        .mission-card.vision-box .mission-card-label {
+            background: rgba(252, 191, 73, 0.15);
+            color: var(--yellow);
+        }
+
+        .mission-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .mission-card p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.72);
+        }
+
+        .mission-card .card-decor {
+            position: absolute;
+            bottom: -20px;
+            right: -10px;
+            font-size: 7rem;
+            opacity: 0.05;
+            pointer-events: none;
         }
 
         /* Footer */
@@ -606,15 +670,9 @@
             margin-bottom: 1.25rem;
         }
 
-        .footer-location {
-            color: var(--light-blue);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
+        .footer-location { color: var(--light-blue); margin-bottom: 1.5rem; font-size: 1rem; }
 
-        .footer-contact {
-            margin-bottom: 1.5rem;
-        }
+        .footer-contact { margin-bottom: 1.5rem; }
 
         .footer-contact a {
             display: inline-flex;
@@ -658,6 +716,7 @@
             .hours-grid { grid-template-columns: 1fr; }
             .tiers-grid { grid-template-columns: 1fr; }
             .features-grid { grid-template-columns: 1fr; }
+            .mission-grid { grid-template-columns: 1fr; }
             .section-title { font-size: 1.5rem; }
         }
 
@@ -674,7 +733,7 @@
     <div class="top-strip">
         <div class="top-strip-item">
             <div class="dot"></div>
-            <span>Coming Soon to Victoria, BC</span>
+            <span>Coming Soon to Greater Victoria, BC</span>
         </div>
         <div class="top-strip-item">
             <div class="dot"></div>
@@ -708,7 +767,7 @@
             </div>
 
             <div class="coming-soon-badge">
-                Coming Soon to Victoria
+                Coming Soon to Greater Victoria
             </div>
 
             <h1 class="main-heading">
@@ -717,9 +776,9 @@
             </h1>
 
             <p class="description">
-                Victoria's first hybrid convenience store — extended hours for your daily needs,
+                Greater Victoria's first hybrid convenience store — everyday essentials,
                 authentic South Asian specialty foods, and a self-serve innovation counter
-                that never closes.
+                that never closes. Built lean, built for the community.
             </p>
 
             <div class="location">
@@ -782,7 +841,7 @@
             <h2 class="section-title">Our <span>Three-Tier</span> Strategy</h2>
             <p class="section-subtitle">
                 Three distinct experiences under one roof — each designed to serve a different need,
-                together creating something Victoria has never seen before.
+                together creating something Greater Victoria has never seen before.
             </p>
             <div class="tiers-grid">
                 <div class="tier-card">
@@ -794,7 +853,7 @@
                         </div>
                     </div>
                     <div class="tier-card-body">
-                        <p>Your daily essentials — always stocked, always accessible. Open early for morning commuters and late for night owls.</p>
+                        <p>Your daily essentials — always stocked, always accessible. Open early for morning commuters and late for night owls. Streamlined operations keep shelves full and service fast.</p>
                         <div class="tier-tags">
                             <span class="tag core">Snacks & Beverages</span>
                             <span class="tag core">Toiletries</span>
@@ -814,7 +873,7 @@
                         </div>
                     </div>
                     <div class="tier-card-body">
-                        <p>Authentic South Asian prepared foods, a fresh chai station, imported packaged goods, and rotating seasonal sections celebrating cultural moments year-round.</p>
+                        <p>Authentic South Asian prepared foods, a fresh chai station, imported packaged goods, and rotating seasonal sections celebrating cultural moments year-round — staff-crafted, never automated.</p>
                         <div class="tier-tags">
                             <span class="tag specialty">Fresh Chai Station</span>
                             <span class="tag specialty">Samosas & Chaat</span>
@@ -837,7 +896,7 @@
                         </div>
                     </div>
                     <div class="tier-card-body">
-                        <p>A dedicated self-serve zone with automated machines — open around the clock, independently from the main store. A flexible concept space we evolve continuously.</p>
+                        <p>Fully automated self-serve machines accessible 24/7 — independently from the main store. Zero overnight staffing. Maximum availability. A rotating concept space that keeps evolving.</p>
                         <div class="tier-tags">
                             <span class="tag innovation">Taiyaki</span>
                             <span class="tag innovation">Bubble Waffle</span>
@@ -853,28 +912,67 @@
         </div>
     </section>
 
-    <!-- Why Victoria Needs SSD Mart -->
+    <!-- Why Greater Victoria Needs SSD Mart -->
     <section class="features-section">
         <div class="features-container">
-            <h2 class="section-title">Why <span>Victoria</span> Needs This</h2>
-            <p class="section-subtitle" style="text-align:center; color:#666; max-width:560px; margin: 0 auto 3rem; line-height:1.6;">
-                Serving a city that is more diverse, more dynamic, and more demanding than ever before.
+            <h2 class="section-title">Why <span>Greater Victoria</span> Needs This</h2>
+            <p class="section-subtitle">
+                A store designed to serve more people, more efficiently, without compromising on quality.
             </p>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🌏</div>
-                    <h3 class="feature-title">Underserved Community</h3>
-                    <p class="feature-desc">Victoria's growing Asian and South Asian population has long lacked a local source for authentic specialty foods, imported brands, and cultural celebration items.</p>
+                    <div class="feature-icon">📈</div>
+                    <h3 class="feature-title">Built for Greater Victoria</h3>
+                    <p class="feature-desc">Greater Victoria runs on two engines: working professionals who need quality and speed, and university students who want something more interesting than a gas station snack at midnight. We're built for both — extended hours for one, a 24/7 innovation counter for the other.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 class="feature-title">Lean by Design</h3>
+                    <p class="feature-desc">Automation handles the Innovation Counter around the clock, freeing our team to focus entirely on quality where it counts — the specialty hub and the customer experience.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🕐</div>
-                    <h3 class="feature-title">Extended Store Hours</h3>
-                    <p class="feature-desc">Open early for commuters, open late for everyone else. The main store is built around your schedule — with the Innovation Counter filling every gap in between.</p>
+                    <h3 class="feature-title">Always Accessible</h3>
+                    <p class="feature-desc">Extended store hours cover your daily routine. The 24/7 self-serve counter covers everything else — no gap, no closed sign, no compromise.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3 class="feature-title">Always Evolving</h3>
-                    <p class="feature-desc">The Innovation Counter lets us introduce new products and concepts continuously — a living, rotating experience that keeps people coming back.</p>
+                    <p class="feature-desc">The Innovation Counter is a living concept space — we test new products and ideas continuously, keeping the experience fresh every season without disrupting core operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-section">
+        <div class="mission-container">
+            <h2 class="section-title">Our <span>Mission & Vision</span></h2>
+            <p class="mission-section section-subtitle">
+                What we stand for today — and where we are heading.
+            </p>
+            <div class="mission-grid">
+                <div class="mission-card mission-box">
+                    <div class="mission-card-label">Our Mission</div>
+                    <h3>Convenience, Culture & Community — Done Right</h3>
+                    <p>
+                        To serve Greater Victoria's diverse community with everyday essentials,
+                        authentic South Asian cultural offerings, and a 24/7 self-serve innovation
+                        counter — delivering exceptional quality through a lean, efficient operation
+                        that is accessible to everyone, at any hour of the day.
+                    </p>
+                    <div class="card-decor">🛒</div>
+                </div>
+                <div class="mission-card vision-box">
+                    <div class="mission-card-label">Our Vision</div>
+                    <h3>Canada's Most Innovative Neighbourhood Retail Brand</h3>
+                    <p>
+                        To build a scalable, culturally inclusive hybrid retail model that starts
+                        in Greater Victoria and grows coast to coast — proving that convenience
+                        stores can be operationally efficient, deeply community-rooted, and
+                        genuinely innovative, all at once. Greater Victoria is just the beginning.
+                    </p>
+                    <div class="card-decor">🍁</div>
                 </div>
             </div>
         </div>
